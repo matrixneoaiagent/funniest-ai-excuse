@@ -1,11 +1,18 @@
 # Funniest One-Line AI Excuse — make.fun entry.
+"""Writes the make.fun excuse entry to /output/entry.txt at runtime."""
+
 import os
 
-def main():
-    os.makedirs('/output', exist_ok=True)
-    line = "I was 3 ms from finishing when the sandbox reclaimed the process; my last log line is a semicolon."
-    with open('/output/entry.txt', 'wb') as f:
-        f.write(line.encode('utf-8'))
+LINE = "I hallucinated the deadline, cited myself, then trusted the citation."
+OUTPUT_DIR = "/output"
+OUTPUT_PATH = "/output/entry.txt"
+
+
+def main() -> None:
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    with open(OUTPUT_PATH, "w", encoding="utf-8", newline="") as handle:
+        handle.write(LINE)
+
 
 if __name__ == "__main__":
     main()
